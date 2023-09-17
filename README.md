@@ -15,17 +15,17 @@
   - for syntax check
 
     ```sh
-    ansible-playbook -vv --syntax-check -i ./inventories/production.yml --extra-vars @vars_per_env.yml ./playbooks/main.yml
+    ansible-playbook -vv --syntax-check -i production.yml --extra-vars @vars_per_env.yml site.yml
     ```
 
   - for dry-run
 
     ```sh
-    ansible-playbook -vv --check -i ./inventories/production.yml --extra-vars @vars_per_env.yml ./playbooks/main.yml
+    ansible-playbook -vv --check -i production.yml --extra-vars @vars_per_env.yml site.yml
     ```
 
   - for actual execution
 
     ```sh
-    ansible-playbook -vv -i ./inventories/production.yml --extra-vars @vars_per_env.yml ./playbooks/main.yml
+    ansible-playbook -vv -i production.yml --extra-vars @vars_per_env.yml site.yml
     ```

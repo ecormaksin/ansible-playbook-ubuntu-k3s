@@ -1,5 +1,0 @@
-- hosts: k3s_agents
-  roles:
-    - ../roles/common
-    - ../roles/k3s-common
-    - ../roles/k3s-agent

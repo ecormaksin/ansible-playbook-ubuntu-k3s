@@ -1,0 +1,5 @@
+- name: "k3s server: install"
+  ignore_errors: "{{ ansible_check_mode }}"
+  ansible.builtin.shell:
+    cmd: |
+      curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="server --node-ip {{ k3s.server.node.ip_address }} --node-external-ip {{ k3s.server.node.ip_address }} --token {{ k3s.token }}" sh -

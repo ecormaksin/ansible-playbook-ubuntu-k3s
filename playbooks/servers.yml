@@ -1,0 +1,5 @@
+- hosts: k3s_servers
+  roles:
+    - ../roles/common
+    - ../roles/k3s-common
+    - ../roles/k3s-server

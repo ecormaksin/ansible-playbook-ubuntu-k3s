@@ -1,3 +1,11 @@
 ansible_user: <Ansible Playbookを実行する時のユーザー>
 ansible_become_pass: <上記ユーザーで管理者権限の必要なコマンドを実行する時のパスワード>
 ansible_ssh_private_key_file: <AnsibleホストへSSH接続する時のprivate鍵パス>
+k3s:
+  token: <Server, Agentで共有するトークン>
+  server:
+    node:
+      ip_address: <クラスター間で通信するためのIPアドレス>
+  agent:
+    node:
+      ip_address: <クラスター間で通信するためのIPアドレス>

@@ -1,0 +1,30 @@
+- name: "k3s common: iptables | allow related tcp ports"
+  become: true
+  ignore_errors: "{{ ansible_check_mode }}"
+  ansible.builtin.iptables:
+    chain: INPUT
+    protocol: "{{ item.protocol }}"
+    destination_port: "{{ item.port }}"
+    jump: ACCEPT
+  with_items:
+    - protocol: tcp
+      port: 2379
+    - protocol: tcp
+      port: 2380
+    - protocol: tcp
+      port: 6443
+    - protocol: udp
+      port: 8472
+    - protocol: tcp
+      port: 10250
+    - protocol: udp
+      port: 51820
+    - protocol: udp
+      port: 51821
+
+- name: "k3s common: iptables | save"
+  become: true
+  ignore_errors: "{{ ansible_check_mode }}"
+  community.general.iptables_state:
+    state: saved
+    path: /etc/sysconfig/iptables

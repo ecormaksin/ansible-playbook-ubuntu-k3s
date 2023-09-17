@@ -1,0 +1,9 @@
+all:
+  hosts:
+  children:
+    k3s-servers:
+      hosts:
+        sv-01:
+    k3s-agents:
+      hosts:
+        ag-01:

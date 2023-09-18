@@ -29,3 +29,9 @@
     ```sh
     ansible-playbook -vv -i production.yml --extra-vars @vars_per_env.yml site.yml
     ```
+
+  - start from a specified task
+
+    ```sh
+    ansible-playbook -vv -i production.yml --extra-vars @vars_per_env.yml site.yml --start-at="<task name>"
+    ```

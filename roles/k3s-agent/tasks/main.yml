@@ -2,4 +2,4 @@
   ignore_errors: "{{ ansible_check_mode }}"
   ansible.builtin.shell:
     cmd: |
-      curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="agent --server https://{{ k3s.server.node.ip_address }}:6443 --node-ip {{ k3s.agent.node.ip_address }} --node-external-ip {{ k3s.agent.node.ip_address }} --token {{ k3s.token }}" sh -
+      curl -sfL https://get.k3s.io | K3S_URL=https://{{ k3s.server.node.ip_address }}:6443 K3S_TOKEN={{ k3s.token }} sh -s -

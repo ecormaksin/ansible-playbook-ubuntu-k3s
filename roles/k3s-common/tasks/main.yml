@@ -1,3 +1,9 @@
+- name: "k3s common: iptables | clear"
+  become: true
+  ignore_errors: "{{ ansible_check_mode }}"
+  ansible.builtin.iptables:
+    flush: true
+
 - name: "k3s common: iptables | allow related tcp ports"
   become: true
   ignore_errors: "{{ ansible_check_mode }}"

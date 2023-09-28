@@ -5,7 +5,8 @@ k3s:
   token: <Server, Agentで共有するトークン>
   server:
     node:
+      name: <Oracle Cloud InfrastructureでK3S_NODE_NAMEを指定するとAgentのインストールがハングしなくなったので、パブリックネットワークで重複しない名前をつける（マシンのホスト名自体を一意にすると解決する？）>
       ip_address: <クラスター間で通信するためのIPアドレス>
   agent:
     node:
-      ip_address: <クラスター間で通信するためのIPアドレス>
+      name: <Oracle Cloud InfrastructureでK3S_NODE_NAMEを指定するとAgentのインストールがハングしなくなったので、パブリックネットワークで重複しない名前をつける（マシンのホスト名自体を一意にすると解決する？）>

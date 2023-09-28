@@ -2,4 +2,4 @@
   ignore_errors: "{{ ansible_check_mode }}"
   ansible.builtin.shell:
     cmd: |
-      curl -sfL https://get.k3s.io | K3S_TOKEN={{ k3s.token }} sh -s -
+      curl -sfL https://get.k3s.io | K3S_NODE_NAME={{ k3s.server.node.name }} K3S_TOKEN={{ k3s.token }} sh -s -
